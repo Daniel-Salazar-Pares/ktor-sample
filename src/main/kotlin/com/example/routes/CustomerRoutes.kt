@@ -31,6 +31,7 @@ fun Route.customerRouting() {
         }
         post {
             val customer = call.receive<Customer>()
+
             customerStorage.add(customer)
             call.respondText(
                 "Customer stored correctly",

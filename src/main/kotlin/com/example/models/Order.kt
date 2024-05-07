@@ -3,22 +3,19 @@ package com.example.models
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Order (val number: String, val contents: List<OrderItem>)
+data class OrderItem(val item: String, val amount: Int, val price: Double)
 
 @Serializable
-data class OrderItem (val item: String, val amount: Int, val price: Double)
+data class Item(val item: String, val price: Double)
 
-val orderStorage = listOf(Order(
-    "2020-04-06-01", listOf(
-        OrderItem("Ham Sandwich", 2, 5.50),
-        OrderItem("Water", 1, 1.50),
-        OrderItem("Beer", 3, 2.30),
-        OrderItem("Cheesecake", 1, 3.75)
-    )),
-    Order("2020-04-03-01", listOf(
-        OrderItem("Cheeseburger", 1, 8.50),
-        OrderItem("Water", 2, 1.50),
-        OrderItem("Coke", 2, 1.76),
-        OrderItem("Ice Cream", 1, 2.35)
-    ))
+
+val storage = listOf(
+        Item("Ham Sandwich",  5.50),
+        Item("Water",  1.50),
+        Item("Beer",  2.30),
+        Item("Cheesecake",  3.75),
+        Item("Cheeseburger", 8.50),
+        Item("Water",  1.50),
+        Item("Coke",  1.76),
+        Item("Ice Cream",  2.35)
 )
